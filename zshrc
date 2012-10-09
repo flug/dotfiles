@@ -94,7 +94,8 @@ function gitcommit()
   else
     source_dir=plugins
   fi
-  for repo in $source_dir/**/.git do
+  for repo in $source_dir/**/.git
+  do
     cd $repo/..
     git svn dcommit
     cd -
