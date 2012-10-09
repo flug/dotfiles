@@ -46,10 +46,111 @@ plugins=(git svn extract symfony2 ssh-agent composer bower)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin
-alias -s avi=vlc
-bindkey "^[OF" end-of-line
-bindkey "^[OH" beginning-of-line
+export PATH=/home/users/gparis/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/users/gparis/.local/bin
+real_git=$(which git)
+function git {
+    if [[ ($1 == svn) && ($2 == dcommit) ]]
+    then
+        curr_branch=$($real_git branch | sed -n 's/\* //p')
+        if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') && ($curr_branch != local_*) && ($curr_branch != 1*) ]]
+        then
+            echo "Committing from $curr_branch; are you sure? [y/N]"
+            read resp
+            if [[ ($resp != y) && ($resp != Y) ]]
+            then
+                return 2
+            fi
+        fi
+    fi
+    $real_git "$@"
+}
+function gitstatus()
+{
+  git status
+  if [[ -d src ]]
+  then
+    source_dir=src
+  else
+    source_dir=plugins
+  fi
+  for repo in $source_dir/**/.git
+  do
+    wt=${repo:0:${#repo}-4}
+    OUTPUT=`git --git-dir=$repo --work-tree=$wt status`
+    LENGTH=`echo "$OUTPUT"|wc -l`
+    if [[ $LENGTH -gt 2 ]]
+    then
+      echo $wt ":"
+      echo $OUTPUT
+    fi
+  done
+}
+function gitcommit()
+{
+  git svn dcommit
+  if [[ -d src ]]
+  then
+    source_dir=src
+  else
+    source_dir=plugins
+  fi
+  for repo in $source_dir/**/.git do
+    cd $repo/..
+    git svn dcommit
+    cd -
+  done
+}
+function gitup
+{
+  git svn rebase
+  if [[ -d src ]]
+  then
+    source_dir=src
+  else
+    source_dir=plugins
+  fi
+  for repo in $source_dir/**/.git
+  do
+    cd $repo/..
+    OUTPUT=`git svn rebase`
+    LENGTH=`echo "$OUTPUT"|wc -l`
+    if [[ $LENGTH -gt 2 ]]
+    then
+      echo $repo ":"
+      echo $OUTPUT
+    fi
+    cd -
+  done
+}
+function gitbranch()
+{
+  git branch
+  if [[ -d src ]]
+  then
+    source_dir=src
+  else
+    source_dir=plugins
+  fi
+  for repo in $source_dir/**/.git
+  do
+    cd $repo/..
+    OUTPUT=`git branch`
+    LENGTH=`echo "$OUTPUT"|wc -l`
+    if [[ $LENGTH -gt 1 ]]
+    then
+      echo $repo ":"
+      echo $OUTPUT
+    fi
+    cd -
+  done
+}
+alias ack=ack-grep
+export PAGER=most
+export EDITOR=vi
+
+bindkey -e
+bindkey "5C" forward-word
+bindkey "5D" backward-word
 source ~/dev/switch/switch.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PAGER=most
