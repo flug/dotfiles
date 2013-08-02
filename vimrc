@@ -1,12 +1,18 @@
+"autoload plugin
 call pathogen#infect()
+
+" don't try to be compatible with old specs of vi
 set nocompatible
+
+" add some color
 syntax on
 
 set modelines=0
 set encoding=utf-8
 set scrolloff=3
-set autoindent
 set showmode
+
+" show commands at the bottom right
 set showcmd
 set hidden
 set visualbell
@@ -15,12 +21,14 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+
+" display line numbers relative to the current line
 set relativenumber
+
+" save undo history to a file
 set undofile
 
 set background=dark
-set laststatus=2 
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 filetype on
 filetype plugin on
 set wildmode=longest,list,full
@@ -35,6 +43,7 @@ let g:ctrlp_follow_symlinks=1
 let g:ctrlp_user_command = ['.git/', 'for i in %s/**/.git; do; a=${i:0:${#i}-4};b=`echo $a|sed -e "s/\//\\\\\\\\\//g"`;git --git-dir=$a/.git ls-files -oc --exclude-standard |sed -e "s/^/$b/"; done']
 let g:ctrlp_extensions = ['tag']
 
+" remove trailing spaces
 autocmd FileType less,sass,yml,css,html,php,twig autocmd BufWritePre <buffer> :call setline(1, map(getline(1,'$'), 'substitute(v:val,"\\s\\+$","","")'))
 autocmd BufRead,BufNewFile /etc/nginx/sites-available/* setf nginx
 
