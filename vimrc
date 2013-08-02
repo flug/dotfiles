@@ -18,14 +18,9 @@ set laststatus=2
 set relativenumber
 set undofile
 
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
 set background=dark
 set laststatus=2 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-colorscheme solarized
 filetype on
 filetype plugin on
 set wildmode=longest,list,full
