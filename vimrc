@@ -12,15 +12,10 @@ set encoding=utf-8
 set scrolloff=3
 set showmode
 
-" show commands at the bottom right
-set showcmd
 set hidden
 set visualbell
 set cursorline
 set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
 
 " display line numbers relative to the current line
 set relativenumber
@@ -31,8 +26,6 @@ set undofile
 set background=dark
 filetype on
 filetype plugin on
-set wildmode=longest,list,full
-set wildmenu
 
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.git|\.hg|\.svn|\.settings|\.sass-cache|cache|log|.rsync_cache)$',
@@ -44,8 +37,8 @@ let g:ctrlp_user_command = ['.git/', 'for i in %s/**/.git; do; a=${i:0:${#i}-4};
 let g:ctrlp_extensions = ['tag']
 
 " remove trailing spaces
-autocmd FileType less,sass,yml,css,html,php,twig autocmd BufWritePre <buffer> :call setline(1, map(getline(1,'$'), 'substitute(v:val,"\\s\\+$","","")'))
-autocmd BufRead,BufNewFile /etc/nginx/sites-available/* setf nginx
+autocmd FileType less,sass,yml,css,html,php,twig,xml,yaml,sh autocmd BufWritePre <buffer> :call setline(1, map(getline(1,'$'), 'substitute(v:val,"\\s\\+$","","")'))
+autocmd BufRead,BufNewFile /etc/nginx/* setf nginx
 
 set grepprg=ack\ --ignore-dir\ cache\ --ignore-dir\ .rsync_cache\ --follow\ --smart-case
 
@@ -56,14 +49,31 @@ set makeprg=php\ -ln\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 cabbr <expr> %% expand('%:p:h')
-set ignorecase
-set smartcase
 set incsearch
 set gdefault
 
 "clear the highlighting
 nnoremap <leader><space> :noh<cr>
 set cc=80
+
+" Vim UI {
+    highlight clear SignColumn      " SignColumn should match background for
+                                    " things like vim-gitgutter
+    " show commands at the bottom right
+    set showcmd
+    set ruler
+    set laststatus=2
+
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme='solarized'
+    set backspace=indent,eol,start
+    set ignorecase
+    set smartcase
+    set wildmode=longest,list,full
+    set wildmenu
+    set list
+    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "
+" }
 
 let g:dbgPavimPort = 9009
 let g:dbgPavimBreakAtEntry = 0
@@ -79,21 +89,32 @@ let g:php_cs_fixer_verbose = 0                  " Return the output of command i
 
 let g:gitgutter_eager = 0 " Avoid gitgutter lag
 
-" disable noob keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" Instead of reverting the cursor to the last position in the buffer, we
+" set it to the first line when editing a git commit message
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 :command! -bang -range -nargs=1 -complete=file MoveWrite  <line1>,<line2>write<bang> <args> | <line1>,<line2>delete _
 :command! -bang -range -nargs=1 -complete=file MoveAppend <line1>,<line2>write<bang> >> <args> | <line1>,<line2>delete _
 
-"Make moving around windows faster
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Key (re)Mappings {
+  " disable noob keys
+  nnoremap <up> <nop>
+  nnoremap <down> <nop>
+  nnoremap <left> <nop>
+  nnoremap <right> <nop>
+  inoremap <up> <nop>
+  inoremap <down> <nop>
+  inoremap <left> <nop>
+  inoremap <right> <nop>
+
+
+  "Make moving around windows faster
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
+
+  " Wrapped lines goes down/up to next row, rather than next line in file.
+  noremap j gj
+  noremap k gk
+" }
