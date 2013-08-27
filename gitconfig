@@ -40,3 +40,5 @@
 	templatedir = ~/.git_template
 [hooks "junkchecker"]
 	phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
+[hooks "php-sismo"]
+	path = /usr/share/nginx/sismo.php
