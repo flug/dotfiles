@@ -33,7 +33,7 @@ filetype on
 filetype plugin on
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.git|\.hg|\.svn|\.settings|\.sass-cache|cache|.rsync_cache)$',
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|\.settings|\.sass-cache|cache|.rsync_cache|vendor/([^\/]+\/)*vendor|vendor/(uc|lmc)@!([^\/]+\/)+Tests)$',
   \ 'file': '.un\~$\|.project$\|.buildpath$\|composer.phar$',
   \ }
 let g:ctrlp_working_path_mode = 0
