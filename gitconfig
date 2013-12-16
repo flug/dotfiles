@@ -26,7 +26,7 @@
 
 [merge]
     keepBackup = false
-    tool = vimdiff
+	tool = meld
 [core]
     editor = vim
     pager = most
