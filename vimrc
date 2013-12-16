@@ -118,3 +118,8 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
   noremap j gj
   noremap k gk
 " }
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
