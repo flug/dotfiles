@@ -75,7 +75,7 @@ set cc=80
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "
 " }
 
-let g:dbgPavimPort = 9009
+let g:dbgPavimPort = 9000
 let g:dbgPavimBreakAtEntry = 0
 
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
