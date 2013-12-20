@@ -1,5 +1,5 @@
 "autoload plugin
-call pathogen#infect()
+execute pathogen#infect()
 
 " don't try to be compatible with old specs of vi
 set nocompatible
