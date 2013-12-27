@@ -1,0 +1,5 @@
+## Requirements
+
+- zsh
+- git
+- most

@@ -3,3 +3,5 @@
 tags
 .rsync_cache
 nbproject
+.sass-cache
+sleuth.php
