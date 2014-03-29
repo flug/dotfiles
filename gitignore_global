@@ -3,6 +3,7 @@
 tags
 .rsync_cache
 nbproject
-.bak
+*.bak
 .sass-cache
 sleuth.php
+*.orig
