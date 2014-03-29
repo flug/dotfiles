@@ -41,12 +41,12 @@ ZSH_THEME="dpoggi"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn extract symfony2 ssh-agent composer bower)
+plugins=(git svn  ruby gem rails  extract symfony2 ssh-agent composer bower)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin
 alias -s avi=vlc
 alias vi=vim
 bindkey "^[OF" end-of-line

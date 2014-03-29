@@ -1,6 +1,6 @@
 [user]
-    name = Marc Lemay
-    email = mlemay@universcine.com
+    name = Flug
+    email = flugv1@gmail.com
 [color]
     diff = auto
     status = auto
@@ -40,4 +40,4 @@
     templatedir = ~/.git_template
 
 [hooks "junkchecker"]
-	phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
+    phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
