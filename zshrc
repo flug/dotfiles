@@ -48,6 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin
 alias -s avi=vlc
+alias vi=vim
 bindkey "^[OF" end-of-line
 bindkey "^[OH" beginning-of-line
 source ~/dev/switch/switch.sh

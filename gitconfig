@@ -1,6 +1,6 @@
 [user]
-    name = Flug
-    email = email@email.com
+    name = Marc Lemay
+    email = mlemay@universcine.com
 [color]
     diff = auto
     status = auto
@@ -26,7 +26,7 @@
 
 [merge]
     keepBackup = false
-	tool = meld
+    tool = vimdiff
 [core]
     editor = vim
     pager = most
@@ -34,11 +34,10 @@
 [alias]
     lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+[push]
+    default = simple
 [init]
     templatedir = ~/.git_template
-[push]
-	default = simple
-[hooks "php-sismo"]
-	path = /usr/share/nginx/html/sismo.php
+
 [hooks "junkchecker"]
 	phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
