@@ -1,4 +1,5 @@
 *~
+.idea
 *.swp
 tags
 .rsync_cache
@@ -6,4 +7,6 @@ nbproject
 *.bak
 .sass-cache
 sleuth.php
+.DS_Store
 *.orig
+symfony*
