@@ -1,6 +1,6 @@
 {
     "config": {
-        "bin-dir": "/home/mlemay/bin"
+        "bin-dir": "$HOME/bin"
     },
     "require": {
         "fabpot/php-cs-fixer": "~1.2@dev",
