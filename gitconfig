@@ -41,3 +41,13 @@
 
 [hooks "junkchecker"]
     phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
+[mergetool]
+    keepBackup = false
+[hooks "notification"]
+    notifier = notify-send
+[hooks "php-sismo"]
+    path = /home/mlemay/workspace/localhost/www/sismo.php
+[diff "lock"]
+    binary = true
+[filter "indent"]
+    clean = indent
