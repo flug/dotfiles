@@ -7,3 +7,6 @@ nbproject
 .sass-cache
 sleuth.php
 *.orig
+*.swo
+*.idea
+*.swn
