@@ -51,6 +51,5 @@ alias -s avi=vlc
 alias vi=vim
 bindkey "^[OF" end-of-line
 bindkey "^[OH" beginning-of-line
-source ~/dev/switch/switch.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PAGER=most
