@@ -1,4 +1,3 @@
-export TERM="xterm-256color"
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -6,11 +5,12 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sorin"
+ZSH_THEME="sonicradish"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cupdate="c self-update && cu -vvv --profile"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -41,14 +41,18 @@ ZSH_THEME="sorin"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn  ruby gem rails  extract symfony2 ssh-agent composer bower)
+plugins=(git svn ruby symfony2 ssh-agent composer bower)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin
+export MICRO_HOME="~/Engine/Java/micro"
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export GOROOT=$HOME/go
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin:/opt/android/tools:/opt/android/platform-tools:$MICRO_HOME/bin:$GOROOT/bin:$GOPATH/bin
+
 alias -s avi=vlc
-alias vi=vim
 bindkey "^[OF" end-of-line
 bindkey "^[OH" beginning-of-line
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
