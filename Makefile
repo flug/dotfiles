@@ -25,6 +25,7 @@ clone:
 	 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 	 ln -s ~/.dotfiles/jslintrc ~/.jslintrc
 	 ln -s ~/.dotfiles/zshrc ~/.zshrc
+	 ln -s ~/.dotfiles/composer.json ~/composer.json
 	 ln -s ~/.vim/vimrc ~/.vimrc
 
 telegram:
