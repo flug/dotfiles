@@ -31,3 +31,8 @@ clone:
 telegram:
 	 wget https://tdesktop.com/linux -O /tmp/telegram.tar.xz
 	 tar xvfJ /tmp/telegram.tar.xz 
+
+composer: 
+	 curl -sS https://getcomposer.org/installer | php
+	 mv composer.phar /usr/local/bin/composer
+	 composer update global -vvv --profile
