@@ -37,7 +37,7 @@
 [push]
     default = simple
 [init]
-    templatedir = ~/.git_template
+    templatedir = ~/.git_template/template
 
 [hooks "junkchecker"]
     phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
