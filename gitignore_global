@@ -9,4 +9,7 @@ nbproject
 sleuth.php
 .DS_Store
 *.orig
+*.swo
+*.idea
+*.swn
 symfony*
