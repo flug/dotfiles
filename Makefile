@@ -4,7 +4,7 @@ install:
 	 apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449
 	 echo deb http://dl.hhvm.com/mint petra main | sudo tee /etc/apt/sources.list.d/hhvm.list
 	 apt update && apt upgrade && apt dist-upgrade
-	 apt install zsh git npm nginx vim chromium-browser php5-fpm php5-cgi nfs-common vim-gnome
+	 apt install zsh git npm nginx vim chromium-browser php5-fpm php5-cgi nfs-common vim-gnome curl
 	 apt install php5-cli php5-json gradle most silversearcher-ag exuberant-ctags curl libboost-filesystem1.49.0 libboost-program-options1.49.0 \
 	 libboost-regex1.49.0 libboost-thread1.49.0 hhvm
 	 wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.4.deb -O /tmp/elasticsearch-1.4.4.deb
