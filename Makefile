@@ -27,6 +27,9 @@ clone:
 	 ln -s ~/.dotfiles/zshrc ~/.zshrc
 	 ln -s ~/.dotfiles/composer.json ~/composer.json
 	 ln -s ~/.vim/vimrc ~/.vimrc
+	 git clone https://github.com/powerline/fonts /tmp/fonts
+	 cd  /tmp/fonts
+	 ./install.sh
 
 telegram:
 	 wget https://tdesktop.com/linux -O /tmp/telegram.tar.xz
