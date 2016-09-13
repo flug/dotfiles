@@ -25,7 +25,7 @@ clone:
 	 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 	 ln -s ~/.dotfiles/jslintrc ~/.jslintrc
 	 ln -s ~/.dotfiles/zshrc ~/.zshrc
-	 ln -s ~/.dotfiles/composer.json ~/composer.json
+	 ln -s ~/.dotfiles/composer.json ~/.composer/composer.json
 	 ln -s ~/.vim/vimrc ~/.vimrc
 	 git clone https://github.com/powerline/fonts /tmp/fonts
 	 cd  /tmp/fonts

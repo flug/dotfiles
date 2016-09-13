@@ -3,9 +3,17 @@
         "bin-dir": "$HOME/bin"
     },
     "require": {
-        "fabpot/php-cs-fixer": "~1.2@dev",
-        "squizlabs/php_codesniffer": "~2.0@dev",
-        "phpmd/phpmd": "@stable",
-        "psy/psysh": "@stable"
+        "squizlabs/php_codesniffer": "*",
+        "psy/psysh": "@stable",
+        "phpmd/phpmd": "^2.2",
+        "psecio/iniscan": "^3.6",
+        "andres-montanez/magallanes": "^1.0",
+        "symfony/var-dumper": "^3.0",
+        "phpfmt/fmt": "^15.1",
+        "hirak/prestissimo": "^0.3.3",
+        "friendsofphp/php-cs-fixer": "^1.11",
+        "symfony/config": "3.0.5", 
+        "symfony/event-dispatcher": "3.0.5",
+        "ovr/phpsa": "^0.5.0"
     }
 }
