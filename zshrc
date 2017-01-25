@@ -50,6 +50,7 @@ export MICRO_HOME="~/Engine/Java/micro"
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 export GOROOT=$HOME/go
 export GOPATH=$HOME/go
+export COMPOSER_HOME="~/.composer"
 export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin:/opt/android/tools:/opt/android/platform-tools:$MICRO_HOME/bin:$GOROOT/bin:$GOPATH/bin
 
 alias -s avi=vlc
