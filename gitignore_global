@@ -13,3 +13,4 @@ sleuth.php
 *.idea
 *.swn
 symfony*
+.cache
