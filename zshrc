@@ -41,7 +41,7 @@ alias cupdate="c self-update && cu -vvv --profile"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn ruby symfony2 ssh-agent composer bower)
+plugins=(git svn ruby symfony2 ssh-agent composer bower docker)
 
 source $ZSH/oh-my-zsh.sh
 
