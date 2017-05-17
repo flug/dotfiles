@@ -34,6 +34,9 @@
 [alias]
     lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    new = checkout -b
+    master = !git stash && git checkout master && git stash pop
+    delete = branch -D
 [push]
     default = simple
 [init]
@@ -45,8 +48,6 @@
     keepBackup = false
 [hooks "notification"]
     notifier = notify-send
-[hooks "php-sismo"]
-    path = /home/mlemay/workspace/localhost/www/sismo.php
 [diff "lock"]
     binary = true
 [filter "indent"]
