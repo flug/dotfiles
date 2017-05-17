@@ -12,5 +12,5 @@ sleuth.php
 *.swo
 *.idea
 *.swn
-symfony*
 .cache
+.vimproject
