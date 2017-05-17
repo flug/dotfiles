@@ -3,3 +3,4 @@
 - zsh
 - git
 - most
+- buku
