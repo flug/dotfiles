@@ -41,19 +41,21 @@ alias cupdate="c self-update && cu -vvv --profile"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn ruby symfony2 ssh-agent composer bower docker)
+plugins=(git svn ruby symfony2 ssh-agent composer bower docker zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export MICRO_HOME="~/Engine/Java/micro"
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export GOROOT=$HOME/go
-export GOPATH=$HOME/go
+export GOROOT=/opt/go
+export GOPATH=$HOME/.go
 export COMPOSER_HOME="~/.composer"
 export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin:/opt/android/tools:/opt/android/platform-tools:$MICRO_HOME/bin:$GOROOT/bin:$GOPATH/bin
+export SISMO_DATA_PATH="~/.sismo/data"
 
 alias -s avi=vlc
+alias bk=buku
 bindkey "^[OF" end-of-line
 bindkey "^[OH" beginning-of-line
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
