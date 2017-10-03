@@ -36,7 +36,9 @@
     lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
     new = checkout -b
     master = !git stash && git checkout master && git stash pop
+    grab = !git stash && git pull --rebase && git stash pop
     delete = branch -D
+    repush = !git commit --amend --no-edit && git push -f
 [push]
     default = simple
 [init]
@@ -52,3 +54,12 @@
     binary = true
 [filter "indent"]
     clean = indent
+[rerere]
+    enabled = true
+    autoupdate = true
+[branch]
+    autosetuprebase = always
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
