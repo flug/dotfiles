@@ -4,3 +4,4 @@
 - git
 - most
 - buku
+- jrnl
