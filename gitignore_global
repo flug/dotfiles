@@ -14,3 +14,7 @@ sleuth.php
 *.swn
 .cache
 .vimproject
+*.http
+*.cache
+.php-version
+scratch.txt

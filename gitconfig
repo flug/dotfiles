@@ -43,6 +43,7 @@
     default = simple
 [init]
     templatedir = ~/.git_template/template
+	defaultBranch = trunk
 
 [hooks "junkchecker"]
     phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
@@ -55,11 +56,11 @@
 [filter "indent"]
     clean = indent
 [rerere]
-    enabled = true
+	enabled = true
     autoupdate = true
 [branch]
     autosetuprebase = always
 [pull]
 	rebase = true
 [commit]
-	gpgsign = true
+	gpgsign = false

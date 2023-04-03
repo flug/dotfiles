@@ -41,7 +41,7 @@ alias cupdate="c self-update && cu -vvv --profile"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn ruby symfony2 ssh-agent composer bower docker zsh-autosuggestions docker-compose gpg-agent)
+plugins=(git svn ruby symfony2 ssh-agent composer bower docker docker-compose gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,8 +51,9 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export GOROOT=/opt/go
 export GOPATH=$HOME/.go
 export COMPOSER_HOME="~/.composer"
-export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin:/opt/android/tools:/opt/android/platform-tools:$MICRO_HOME/bin:$GOROOT/bin:$GOPATH/bin:~/.npm-global/bin
+export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/greg/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.rvm/bin:/opt/jruby/bin:~/shoes4/bin:/opt/android/tools:/opt/android/platform-tools:$MICRO_HOME/bin:$GOROOT/bin:$GOPATH/bin:~/.npm-global/bin:$HOME/.symfony/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.cargo/bin:/opt/ngrok
 export SISMO_DATA_PATH="~/.sismo/data"
+
 
 alias -s avi=vlc
 alias betty=$HOME/workspace/betty/main.rb
@@ -64,3 +65,7 @@ bindkey "^[OH" beginning-of-line
 export PAGER=most
 alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True'
 alias cap=docker run --rm  -i -t -v $(pwd):/root/workdir  -v $(readlink -f $SSH_AUTH_SOCK):/root/ssh-agen mjanser/capifony
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+alias phpqa='docker run --init -it --rm -p 34863:34863 -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:php8.1-alpine'
+export COMPOSER_AUTH_ARTE='{"http-basic":{"repo.packagist.com":{"username":"token","password":"427aaeae576d4008370c49a19f81af95acf4ecda33c5fda8982c07715c7c"}}}'
