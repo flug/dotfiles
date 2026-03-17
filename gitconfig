@@ -35,7 +35,7 @@
     lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
     new = checkout -b
-    master = !git stash && git checkout master && git stash pop
+    trunk = !git stash && git checkout $(git config init.defaultBranch) && git stash pop
     grab = !git stash && git pull --rebase && git stash pop
     delete = branch -D
     repush = !git commit --amend --no-edit && git push -f
@@ -50,7 +50,7 @@
 [mergetool]
     keepBackup = false
 [hooks "notification"]
-    notifier = notify-send
+    notifier = sh -c 'command -v notify-send >/dev/null && notify-send "$@"' --
 [diff "lock"]
     binary = true
 [filter "indent"]

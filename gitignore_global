@@ -1,6 +1,8 @@
 *~
 .idea
 *.swp
+*.swo
+*.swn
 tags
 .rsync_cache
 nbproject
@@ -9,12 +11,12 @@ nbproject
 sleuth.php
 .DS_Store
 *.orig
-*.swo
-*.idea
-*.swn
 .cache
+*.cache
 .vimproject
 *.http
-*.cache
 .php-version
 scratch.txt
+.env
+.vscode
+node_modules
